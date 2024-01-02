@@ -21,6 +21,11 @@ FROM [TABLE_NAME] WITH (nolock)
 WHERE ExtractTypeID = 1234
 AND TS_CREATE >= '2023-01-31' AND TS_CREATE < '2023-02-01'
 
+--date CAST
+SELECT TOP 1000 *
+FROM [Table_name]
+WHERE CONVERT(DATE,TS_CREATE)='20231220'
+ORDER BY 1 DESC
 
 --last extract with 40
 
@@ -47,8 +52,4 @@ AND ExtractTypeID = 1234
 --last extract with 40 END
 
 
---date CAST
-SELECT TOP 1000 *
-FROM [Table_name]
-WHERE CONVERT(DATE,TS_CREATE)='20231220'
-ORDER BY 1 DESC
+
